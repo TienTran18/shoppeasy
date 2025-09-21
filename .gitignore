@@ -28,6 +28,7 @@ coverage/
 .nyc_output
 
 # Dependency directories
+node_modules/
 jspm_packages/
 
 # Optional npm cache directory
@@ -89,25 +90,61 @@ jspm_packages/
 ehthumbs.db
 Thumbs.db
 
-# Temporary files
-*.tmp
-*.temp
-
 # Build outputs
 dist/
 build/
+out/
 
-# Database files (if using local MongoDB)
-data/
+# Temporary files
+tmp/
+temp/
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
 
 # Backup files
 *.bak
 *.backup
 
-# Test files
-test-results/
-coverage/
+# Local development
+.local/
+local/
 
 # Package lock files (optional - uncomment if you want to ignore them)
 # package-lock.json
 # yarn.lock
+
+# Frontend specific
+frontend/dist/
+frontend/build/
+frontend/.cache/
+
+# Backend specific
+backend/logs/
+backend/uploads/
+backend/temp/
+
+# MongoDB data (if running locally)
+data/
+mongodb-data/
+
+# SSL certificates
+*.pem
+*.key
+*.crt
+
+# Docker
+.dockerignore
+Dockerfile
+docker-compose.yml
+
+# Testing
+coverage/
+.nyc_output/
+test-results/
+
+# Misc
+*.tgz
+*.tar.gz

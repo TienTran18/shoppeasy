@@ -1,45 +1,77 @@
 {
-  "name": "shopping-web-app",
+  "name": "shoppeasy",
   "version": "2.0.0",
-  "description": "A modern modular shopping web application with authentication, reviews, and wishlist functionality",
-  "main": "index.html",
+  "description": "A modern full-stack shopping web application with MongoDB integration",
+  "main": "frontend/index.html",
   "scripts": {
-    "start": "npx http-server . -p 3000 -o",
-    "dev": "npx live-server --port=3000",
-    "server": "node server.js",
-    "server:dev": "nodemon server.js",
-    "init-db": "node scripts/init-database.js",
-    "test-connection": "node test-connection.js",
-    "setup": "node setup.js",
+    "start": "npx http-server frontend -p 3000 -o",
+    "dev": "npx live-server frontend --port=3000",
+    "backend": "cd backend && npm run dev",
+    "backend:start": "cd backend && npm start",
+    "backend:init": "cd backend && npm run init-db",
+    "backend:test": "cd backend && npm run test-connection",
+    "install:all": "npm install && cd backend && npm install",
     "build": "echo 'Build process would go here'",
-    "test": "echo 'Tests would go here'"
+    "test": "echo 'Tests would go here'",
+    "setup": "npm run install:all && npm run backend:init"
   },
-  "keywords": ["shopping", "ecommerce", "web", "application", "modular", "authentication", "reviews", "wishlist"],
-  "author": "Your Name",
+  "keywords": [
+    "shopping",
+    "ecommerce",
+    "web",
+    "application",
+    "fullstack",
+    "mongodb",
+    "express",
+    "nodejs",
+    "javascript",
+    "html",
+    "css"
+  ],
+  "author": "Tien Tran",
   "license": "MIT",
-  "dependencies": {
-    "express": "^4.18.2",
-    "mongoose": "^7.5.0",
-    "cors": "^2.8.5",
-    "dotenv": "^16.3.1",
-    "bcryptjs": "^2.4.3",
-    "jsonwebtoken": "^9.0.2",
-    "helmet": "^7.0.0",
-    "express-rate-limit": "^6.10.0"
-  },
   "devDependencies": {
     "http-server": "^14.1.1",
-    "live-server": "^1.2.2",
-    "nodemon": "^3.0.1"
+    "live-server": "^1.2.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TienTran18/shoppeasy.git"
+  },
+  "bugs": {
+    "url": "https://github.com/TienTran18/shoppeasy/issues"
+  },
+  "homepage": "https://github.com/TienTran18/shoppeasy#readme",
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
   },
   "features": [
-    "User Authentication (Login/Register)",
+    "Full-stack web application",
+    "Frontend: HTML, CSS, JavaScript",
+    "Backend: Node.js, Express.js",
+    "Database: MongoDB with Mongoose",
+    "User Authentication System",
     "Product Catalog with Search & Filtering",
     "Shopping Cart Management",
     "Product Reviews & Comments",
     "Wishlist Functionality",
     "User Profile Management",
     "Responsive Design",
-    "Modular Architecture"
-  ]
+    "Modular Architecture",
+    "RESTful API",
+    "Security Features (CORS, Rate Limiting)",
+    "Error Handling & Validation"
+  ],
+  "projectStructure": {
+    "frontend": "HTML, CSS, JavaScript client-side application",
+    "backend": "Node.js/Express.js server with MongoDB",
+    "database": "MongoDB Atlas cloud database",
+    "api": "RESTful API endpoints for all operations"
+  },
+  "deployment": {
+    "frontend": ["Netlify", "Vercel", "GitHub Pages"],
+    "backend": ["Heroku", "Railway", "DigitalOcean"],
+    "database": "MongoDB Atlas (recommended)"
+  }
 }

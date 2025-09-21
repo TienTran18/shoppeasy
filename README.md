@@ -1,238 +1,309 @@
-# ShopEasy - Advanced Modular Shopping Web Application
+# ShopEasy - Modern Shopping Web Application
 
-A comprehensive, modular shopping web application built with vanilla HTML, CSS, and JavaScript. Features user authentication, product reviews, wishlist functionality, and a complete e-commerce experience with modern UI/UX.
+A full-stack e-commerce web application built with modern web technologies, featuring a modular frontend and a robust backend API.
 
 ## 🚀 Features
 
-### 🔐 Authentication System
-- **User Registration**: Create new accounts with email validation
-- **User Login/Logout**: Secure authentication with session management
-- **User Profiles**: View and manage user information and statistics
-- **Session Persistence**: Stay logged in across browser sessions
+### Frontend Features
+- **Responsive Design** - Works perfectly on desktop, tablet, and mobile
+- **User Authentication** - Login, register, and profile management
+- **Product Catalog** - Browse products with search and filtering
+- **Shopping Cart** - Add, remove, and manage cart items
+- **Wishlist** - Save favorite products for later
+- **Product Reviews** - Rate and review products with comments
+- **Modern UI** - Beautiful, intuitive interface with smooth animations
+- **Modular Architecture** - Clean, maintainable code structure
 
-### 🛍️ Shopping Features
-- **Product Catalog**: Browse through 12+ products across 6 categories
-- **Advanced Search**: Real-time search with product name and description matching
-- **Smart Filtering**: Filter by category, price range, and ratings
-- **Product Sorting**: Sort by name, price (ascending/descending), and rating
-- **Shopping Cart**: Add, remove, and manage items with real-time updates
-- **Wishlist**: Save favorite products for later purchase
-- **Product Reviews**: Read and write detailed product reviews with ratings
-- **Checkout Process**: Complete order placement with form validation
-
-### 💬 Reviews & Comments
-- **Star Ratings**: 5-star rating system for products
-- **Detailed Reviews**: Write comprehensive reviews with titles and comments
-- **Review Management**: View all reviews, mark helpful reviews
-- **Verified Purchases**: Distinguish verified customer reviews
-- **Review Statistics**: Average ratings and review counts
-
-### 👤 User Experience
-- **Responsive Design**: Perfect on desktop, tablet, and mobile devices
-- **Modern UI**: Clean, professional design with smooth animations
-- **Interactive Elements**: Hover effects, loading states, and visual feedback
-- **Accessibility**: Keyboard navigation and semantic HTML structure
-- **Performance**: Optimized images and efficient modular JavaScript
-- **Notifications**: Real-time feedback for user actions
-
-### 🏗️ Technical Architecture
-- **Modular JavaScript**: Separated concerns with dedicated modules
-- **ES6+ Features**: Modern JavaScript with classes and async/await
-- **CSS Grid & Flexbox**: Advanced layout techniques for responsive design
-- **Local Storage**: Persistent data for cart, wishlist, and user sessions
-- **Font Awesome Icons**: Professional iconography throughout
-- **Google Fonts**: Beautiful typography with Inter font family
+### Backend Features
+- **RESTful API** - Complete API for all operations
+- **MongoDB Integration** - Scalable database with Mongoose ODM
+- **User Management** - Secure user authentication and profiles
+- **Product Management** - CRUD operations for products
+- **Order Processing** - Complete order management system
+- **Review System** - Product reviews and ratings
+- **Wishlist Management** - User wishlist functionality
+- **Security** - CORS, rate limiting, and input validation
 
 ## 📁 Project Structure
 
 ```
-shopping-web-app/
-├── index.html              # Main HTML file with all modals and structure
-├── styles.css              # Complete CSS with responsive design
-├── package.json            # Project configuration and dependencies
-├── README.md              # Project documentation
-└── js/                    # Modular JavaScript files
-    ├── app.js             # Main application controller
-    ├── auth.js            # Authentication system
-    ├── products.js        # Product management and display
-    ├── cart.js            # Shopping cart functionality
-    ├── reviews.js         # Reviews and comments system
-    └── wishlist.js        # Wishlist management
+shoppeasy/
+├── frontend/                 # Frontend application
+│   ├── index.html           # Main HTML file
+│   ├── styles.css           # CSS styles
+│   └── js/                  # JavaScript modules
+│       ├── app.js           # Main application controller
+│       ├── auth.js          # Authentication system
+│       ├── products.js      # Product management
+│       ├── cart.js          # Shopping cart
+│       ├── reviews.js       # Review system
+│       ├── wishlist.js      # Wishlist management
+│       └── database.js      # Database operations
+├── backend/                 # Backend server
+│   ├── server.js           # Express.js server
+│   ├── package.json        # Backend dependencies
+│   ├── scripts/            # Database scripts
+│   │   └── init-database.js
+│   ├── env.example         # Environment variables template
+│   └── README.md           # Backend documentation
+├── package.json            # Root package.json
+└── README.md              # This file
 ```
 
-## 🛠️ Installation & Setup
+## 🛠️ Technologies Used
+
+### Frontend
+- **HTML5** - Semantic markup
+- **CSS3** - Modern styling with Flexbox and Grid
+- **Vanilla JavaScript** - No frameworks, pure JS
+- **Font Awesome** - Icons
+- **Google Fonts** - Typography
+
+### Backend
+- **Node.js** - Runtime environment
+- **Express.js** - Web framework
+- **MongoDB** - Database
+- **Mongoose** - ODM for MongoDB
+- **CORS** - Cross-origin resource sharing
+- **Helmet** - Security middleware
+- **Rate Limiting** - API protection
+
+## 🚀 Quick Start
 
 ### Prerequisites
-- Node.js (version 14 or higher)
-- npm (comes with Node.js)
+- Node.js (v14 or higher)
+- MongoDB Atlas account or local MongoDB
+- Git
 
-### Quick Start
+### Installation
 
-1. **Clone or Download** the project files to your local machine
-
-2. **Install Dependencies**
+1. **Clone the repository**
    ```bash
+   git clone https://github.com/TienTran18/shoppeasy.git
+   cd shoppeasy
+   ```
+
+2. **Install dependencies**
+   ```bash
+   # Install root dependencies
    npm install
+   
+   # Install backend dependencies
+   cd backend
+   npm install
+   cd ..
    ```
 
-3. **Start the Development Server**
+3. **Configure MongoDB**
    ```bash
-   npm start
+   # Copy environment template
+   cp backend/env.example backend/.env
+   
+   # Edit backend/.env with your MongoDB credentials
+   # Update MONGODB_URI with your connection string
    ```
-   This will start a local server at `http://localhost:3000` and automatically open your browser.
 
-   **Alternative**: Use the dev server with live reload
+4. **Initialize Database**
    ```bash
+   cd backend
+   npm run init-db
+   cd ..
+   ```
+
+5. **Start the Application**
+   ```bash
+   # Start backend server (Terminal 1)
+   cd backend
+   npm run dev
+   
+   # Start frontend server (Terminal 2)
    npm run dev
    ```
 
-4. **Open in Browser**
-   - The application will automatically open in your default browser
-   - If not, manually navigate to `http://localhost:3000`
+6. **Access the Application**
+   - Frontend: http://localhost:3000
+   - Backend API: http://localhost:3001
 
-### Manual Setup (Without npm)
+## 📖 Usage
 
-If you prefer not to use npm, you can simply:
+### Frontend Development
+```bash
+# Start development server with live reload
+npm run dev
 
-1. Download all the project files
-2. Open `index.html` directly in your web browser
-3. The application will work, but some features like live reload won't be available
-
-## 🎯 How to Use
-
-### Browsing Products
-1. **View All Products**: The homepage displays all available products in a grid layout
-2. **Category Filtering**: Click on category links (Electronics, Clothing, etc.) to filter products
-3. **Search**: Use the search bar to find specific products by name or description
-4. **Price Filter**: Adjust the price range slider to filter products by price
-5. **Sorting**: Use the dropdown to sort products by name, price, or rating
-
-### Shopping Cart
-1. **Add Items**: Click "Add to Cart" on any product to add it to your cart
-2. **View Cart**: Click the cart icon in the header to open the cart sidebar
-3. **Manage Items**: 
-   - Use +/- buttons to adjust quantities
-   - Click "Remove" to delete items
-   - View total price in real-time
-4. **Checkout**: Click "Proceed to Checkout" to complete your purchase
-
-### Checkout Process
-1. **Fill Form**: Complete the checkout form with your details
-2. **Payment Info**: Enter card details (simulated - no real payments)
-3. **Place Order**: Click "Place Order" to complete the transaction
-4. **Confirmation**: Receive a success message confirming your order
-
-## 🎨 Customization
-
-### Adding New Products
-Edit the `loadProducts()` method in `script.js` to add new products:
-
-```javascript
-{
-    id: 13,
-    name: "Your Product Name",
-    description: "Product description here",
-    price: 99.99,
-    category: "electronics", // or clothing, home, sports, books
-    rating: 4.5,
-    image: "https://your-image-url.com/image.jpg",
-    inStock: true
-}
+# Start production server
+npm start
 ```
 
-### Styling Customization
-- **Colors**: Modify CSS custom properties in `styles.css`
-- **Fonts**: Change the Google Fonts import in `index.html`
-- **Layout**: Adjust grid and flexbox properties in CSS
-- **Animations**: Customize transition and animation properties
+### Backend Development
+```bash
+# Start backend with nodemon (auto-restart)
+cd backend
+npm run dev
 
-### Adding New Categories
-1. Add category link to navigation in `index.html`
-2. Update the category filter logic in `script.js`
-3. Add products with the new category
+# Start backend in production mode
+npm start
+```
 
-## 📱 Responsive Design
+### Database Operations
+```bash
+# Initialize database with sample data
+cd backend
+npm run init-db
 
-The application is fully responsive and optimized for:
-- **Desktop**: Full-featured experience with sidebar cart
-- **Tablet**: Adapted layout with touch-friendly interactions
-- **Mobile**: Stacked layout with mobile-optimized cart modal
+# Test database connection
+npm run test-connection
+```
 
-## 🔧 Browser Support
+## 🔧 Configuration
 
-- Chrome (recommended)
-- Firefox
-- Safari
-- Edge
-- Mobile browsers (iOS Safari, Chrome Mobile)
+### MongoDB Setup
+1. Create a MongoDB Atlas account
+2. Create a new cluster
+3. Get your connection string
+4. Update `backend/.env` with your credentials
 
-## 🚀 Performance Features
+### Environment Variables
+```env
+# backend/.env
+MONGODB_URI=mongodb+srv://USERNAME:PASSWORD@CLUSTER-NAME.mongodb.net/DATABASE-NAME?retryWrites=true&w=majority
+PORT=3001
+NODE_ENV=development
+```
 
-- **Lazy Loading**: Images load as they come into view
-- **Efficient Rendering**: Only re-render changed elements
-- **Optimized Animations**: Hardware-accelerated CSS transitions
-- **Minimal Dependencies**: Lightweight with no heavy frameworks
+## 📱 Features Overview
 
-## 🛡️ Security Notes
+### User Authentication
+- User registration and login
+- Profile management
+- Secure session handling
+- User avatars and information
 
-- This is a demo application with simulated checkout
-- No real payment processing is implemented
-- Form validation is client-side only
-- For production use, implement proper server-side validation and security
+### Product Management
+- Product catalog with categories
+- Search and filtering
+- Product details and images
+- Stock management
+- Product ratings and reviews
+
+### Shopping Experience
+- Add products to cart
+- Quantity management
+- Cart persistence
+- Checkout process
+- Order history
+
+### Wishlist
+- Save favorite products
+- Remove from wishlist
+- Wishlist persistence
+- Quick add to cart
+
+### Reviews & Ratings
+- Star rating system
+- Written reviews
+- Review helpfulness voting
+- Verified purchase badges
+- Review moderation
+
+## 🎨 UI/UX Features
+
+- **Responsive Design** - Mobile-first approach
+- **Modern Interface** - Clean, professional design
+- **Smooth Animations** - Enhanced user experience
+- **Loading States** - Visual feedback for operations
+- **Error Handling** - User-friendly error messages
+- **Accessibility** - WCAG compliant design
+
+## 🔒 Security Features
+
+- **CORS Protection** - Secure cross-origin requests
+- **Rate Limiting** - Prevent API abuse
+- **Input Validation** - Sanitize user inputs
+- **Error Handling** - Secure error responses
+- **Helmet.js** - Security headers
+
+## 📊 API Documentation
+
+### Authentication Endpoints
+- `POST /api/users` - Register new user
+- `GET /api/users/:id` - Get user profile
+- `PUT /api/users/:id` - Update user profile
+
+### Product Endpoints
+- `GET /api/products` - Get all products
+- `GET /api/products/:id` - Get product details
+- `POST /api/products` - Create product (admin)
+- `PUT /api/products/:id` - Update product (admin)
+
+### Cart & Orders
+- `POST /api/orders` - Create new order
+- `GET /api/orders` - Get user orders
+- `PUT /api/orders/:id` - Update order status
+
+### Reviews
+- `POST /api/reviews` - Create review
+- `GET /api/reviews` - Get product reviews
+- `PUT /api/reviews/:id` - Update review
+
+### Wishlist
+- `POST /api/wishlists` - Add to wishlist
+- `GET /api/wishlists` - Get user wishlist
+- `DELETE /api/wishlists/:id` - Remove from wishlist
+
+## 🚀 Deployment
+
+### Frontend Deployment
+- **Netlify** - Easy static site deployment
+- **Vercel** - Modern frontend deployment
+- **GitHub Pages** - Free hosting option
+
+### Backend Deployment
+- **Heroku** - Easy Node.js deployment
+- **Railway** - Modern backend hosting
+- **DigitalOcean** - VPS deployment
+
+### Database
+- **MongoDB Atlas** - Cloud database (recommended)
+- **MongoDB Compass** - Local development
 
 ## 🤝 Contributing
 
-Feel free to contribute to this project by:
-1. Adding new features
-2. Improving the UI/UX
-3. Optimizing performance
-4. Adding more product categories
-5. Enhancing accessibility
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-## 📄 License
+## 📝 License
 
-This project is open source and available under the [MIT License](LICENSE).
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🎉 Demo
+## 👥 Authors
 
-Once you start the application, you can:
+- **Tien Tran** - *Initial work* - [TienTran18](https://github.com/TienTran18)
 
-### 🔐 Authentication
-- **Register**: Create a new account with email and username
-- **Login**: Sign in with existing credentials (try: john@example.com / password123)
-- **Profile**: View your profile with order history and statistics
-- **Logout**: Secure session termination
+## 🙏 Acknowledgments
 
-### 🛍️ Shopping Experience
-- **Browse Products**: Explore 12+ products across 6 categories
-- **Search**: Find products by name or description
-- **Filter**: Narrow down by category, price range, and ratings
-- **Sort**: Organize products by name, price, or rating
-- **Add to Cart**: Add items with real-time cart updates
-- **Wishlist**: Save favorite products for later
-- **Checkout**: Complete purchases with form validation
-
-### 💬 Reviews & Social Features
-- **Read Reviews**: View detailed customer reviews with ratings
-- **Write Reviews**: Share your experience with star ratings and comments
-- **Rate Helpfulness**: Mark reviews as helpful
-- **Verified Badges**: See verified purchase reviews
-
-### 📱 Responsive Design
-- **Desktop**: Full-featured experience with all modals and interactions
-- **Tablet**: Optimized layout with touch-friendly controls
-- **Mobile**: Streamlined interface with mobile-optimized navigation
+- Unsplash for beautiful product images
+- Font Awesome for icons
+- Google Fonts for typography
+- MongoDB for database services
+- Express.js community for excellent documentation
 
 ## 📞 Support
 
-If you encounter any issues or have questions:
-1. Check the browser console for any error messages
-2. Ensure all files are properly downloaded
-3. Verify that you're using a modern web browser
-4. Make sure the development server is running correctly
+If you have any questions or need help:
+
+1. Check the [Issues](https://github.com/TienTran18/shoppeasy/issues) page
+2. Create a new issue with detailed description
+3. Contact: [Your Email]
+
+## 🔄 Version History
+
+- **v2.0.0** - Full-stack application with MongoDB integration
+- **v1.0.0** - Initial frontend-only version
 
 ---
 
-**Enjoy shopping with ShopEasy! 🛍️**
-#   s h o p p e a s y  
- 
+**Happy Shopping! 🛒✨**
