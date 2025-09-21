@@ -1,0 +1,45 @@
+{
+  "name": "shopping-web-app",
+  "version": "2.0.0",
+  "description": "A modern modular shopping web application with authentication, reviews, and wishlist functionality",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server . -p 3000 -o",
+    "dev": "npx live-server --port=3000",
+    "server": "node server.js",
+    "server:dev": "nodemon server.js",
+    "init-db": "node scripts/init-database.js",
+    "test-connection": "node test-connection.js",
+    "setup": "node setup.js",
+    "build": "echo 'Build process would go here'",
+    "test": "echo 'Tests would go here'"
+  },
+  "keywords": ["shopping", "ecommerce", "web", "application", "modular", "authentication", "reviews", "wishlist"],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^7.5.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^9.0.2",
+    "helmet": "^7.0.0",
+    "express-rate-limit": "^6.10.0"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "live-server": "^1.2.2",
+    "nodemon": "^3.0.1"
+  },
+  "features": [
+    "User Authentication (Login/Register)",
+    "Product Catalog with Search & Filtering",
+    "Shopping Cart Management",
+    "Product Reviews & Comments",
+    "Wishlist Functionality",
+    "User Profile Management",
+    "Responsive Design",
+    "Modular Architecture"
+  ]
+}
