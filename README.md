@@ -234,3 +234,5 @@ If you encounter any issues or have questions:
 ---
 
 **Enjoy shopping with ShopEasy! 🛍️**
+#   s h o p p e a s y  
+ 
